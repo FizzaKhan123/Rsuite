@@ -87,7 +87,7 @@ export default function Home() {
       console.log(data);
     }}
   >
-    <Column width={70} align="center" fixed sortable verticalAlign="middle">
+    <Column minWidth={300}  flexGrow={2} align="center" fixed sortable verticalAlign="middle">
       <HeaderCell>Id</HeaderCell>
       <Cell dataKey="first_name" >{rowData => (
             <div style={{display:"flex" , flexDirection:"column"}}>
@@ -99,35 +99,25 @@ export default function Home() {
           )}</Cell>
     </Column>
 
-    <Column width={140} fixed sortable verticalAlign="middle">
+    <Column minWidth={300}  flexGrow={2} fixed sortable verticalAlign="middle">
       <HeaderCell renderSortIcon={renderSortIcon}>
         First Name
-        <p style={{ color: 'blue' }}>Custom sort icon</p>
+     
       </HeaderCell>
       <Cell dataKey="conversations_count" />
     </Column>
-    <Column width={130} sortable verticalAlign="middle">
+    <Column minWidth={300}  flexGrow={2} sortable verticalAlign="middle">
       <HeaderCell>Last Name</HeaderCell>
       <Cell dataKey={"last_sign_in_at"} />
     </Column>
-    <ColumnGroup
-      header={'Address'}
-      fixed
-      align="center"
-      verticalAlign="middle"
-      groupHeaderHeight={30}
-    >
-      <Column width={200} sortable >
+    
+      <Column minWidth={300}  flexGrow={2} sortable >
         <HeaderCell  renderSortIcon={renderSortIcon}>
-          City <span style={{ color: 'blue' }}>Custom sort icon</span>
+          City 
         </HeaderCell>
         <Cell dataKey="last_name" />
       </Column>
-      <Column width={200} sortable verticalAlign="middle">
-        <HeaderCell>Street</HeaderCell>
-        <Cell dataKey="street" />
-      </Column>
-    </ColumnGroup>
+    
   
   </Table>
   );
